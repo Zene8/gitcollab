@@ -1,0 +1,28 @@
+.carousel { 
+    display: flex; 
+    overflow: hidden; 
+    position: relative; 
+} 
+
+.carousel img { 
+    height: 200px; 
+    flex-shrink: 0; 
+    margin-right: 10px; 
+    transition: transform 0.3s ease-in-out; 
+} 
+
+.carousel img:last-child { 
+    margin-right: 0; 
+} 
+
+.carousel:hover img { 
+    transform: scale(1.1); 
+} 
+
+.carousel:hover img:last-child { 
+    transform: translateX(-100%); 
+} 
+
+.carousel:hover img:first-child { 
+    transform: translateX(100%); 
+}
