@@ -3,5 +3,9 @@ html{
 }
 
 #imgdiv{
-    background-image: img0.jpeg
+    background-image: img1.jpg
+}
+
+#btn{
+    font-size: 65px;
 }
