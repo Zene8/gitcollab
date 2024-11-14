@@ -1,0 +1,37 @@
+{
+  "adjective": [
+    "angry",
+    "big",
+    "fast",
+    "huge",
+    "real",
+    "serious",
+    "wise"
+  ],
+
+  "adverb": [
+    "helpfully",
+    "hopefully",
+    "pensively",
+    "slowly"
+  ],
+
+  "noun": [
+    "apple",
+    "bolognese",
+    "custard",
+    "didgeridoo",
+    "egg",
+    "stud",
+    "wombat",
+    "zebra"
+  ],
+
+  "verb": [
+    "builds",
+    "climbs",
+    "eats",
+    "jumps",
+    "runs"
+  ]
+}
