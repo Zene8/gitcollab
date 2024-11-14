@@ -29,6 +29,7 @@ async function fetch_words() {
                     words[syllables].push(word);
                 }
             });
+            generate_haiku()
         })
     } catch (error) {
         console.error(error.message);
@@ -78,6 +79,16 @@ function add_words() {
     fetch_textarea("verbs").forEach(verb => {
         verbs.push(verb);
     })
+}
+
+function get_syl(n) {
+    return get_random(words[n])
+}
+
+function generate_haiku() {
+    document.getElementById("haiku-desc").innerHTML = `${get_syl(1)} ${get_syl(2)} ${get_syl(2)}<br>
+    ${get_syl(3)} ${get_syl(1)} ${get_syl((2))} ${get_syl(1)}<br>
+    ${get_syl(1)} ${get_syl(1)} ${get_syl(2)} ${get_syl(1)}`
 }
 
 Promise.allSettled([fetch_JSON, load_DOM]).then((values) => {
