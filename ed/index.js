@@ -17,8 +17,7 @@ const load_DOM = new Promise((resolve, reject) => {
 })
 
 function get_random(list) {
-    const t = list[Math.floor((Math.random()*list.length))];
-    return t;
+    return list[Math.floor((Math.random()*list.length))];
 }
 
 function load_words() {
@@ -26,7 +25,29 @@ function load_words() {
     ${get_random(verbs)} ${get_random(adverbs)}`;
 }
 
+function fetch_textarea(name) {
+    const result = document.getElementById(`input-${name}`).value;
+    document.getElementById(`input-${name}`).value = "";
+    return result;
+}
+
+function add_words() {
+    fetch_textarea("adjectives").split(", ").forEach(adjective => {
+        adjectives.push(adjective);
+    })
+    fetch_textarea("adverbs").split(", ").forEach(adverb => {
+        adverbs.push(adverb);
+    })
+    fetch_textarea("nouns").split(", ").forEach(noun => {
+        nouns.push(noun);
+    })
+    fetch_textarea("verbs").split(", ").forEach(verb => {
+        verbs.push(verb);
+    })
+}
+
 Promise.allSettled([fetch_JSON, load_DOM]).then((values) => {
-    console.log("test")
+    document.getElementById("article-reload").addEventListener("click", load_words);
+    document.getElementById("add-words").addEventListener("click", add_words);
     load_words();
 });
